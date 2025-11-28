@@ -1,6 +1,7 @@
-import Label from '@/components/atoms/Label'
-import Input from '@/components/atoms/Input'
-import Select from '@/components/atoms/Select'
+import React from "react";
+import Select from "@/components/atoms/Select";
+import Label from "@/components/atoms/Label";
+import Input from "@/components/atoms/Input";
 
 const FormField = ({ 
   label, 
@@ -11,7 +12,9 @@ const FormField = ({
   required = false, 
   error,
   options = [],
-  className = ""
+  className = "",
+  name,
+  min
 }) => {
   const id = `field-${Math.random().toString(36).substr(2, 9)}`
 
@@ -40,13 +43,15 @@ const FormField = ({
           className="flex w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-coral-500/50 focus:border-coral-500 disabled:cursor-not-allowed disabled:opacity-50 transition-colors duration-200 resize-vertical"
         />
       ) : (
-        <Input
+<Input
           id={id}
           type={type}
+          name={name}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
           required={required}
+          min={min}
         />
       )}
       {error && (
