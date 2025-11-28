@@ -7,9 +7,10 @@ const Header = () => {
   const location = useLocation()
   const [searchQuery, setSearchQuery] = useState("")
 
-  const navigation = [
+const navigation = [
     { name: "Pipeline", href: "/pipeline", icon: "BarChart3" },
-    { name: "Contacts", href: "/contacts", icon: "Users" }
+    { name: "Contacts", href: "/contacts", icon: "Users" },
+    { name: "Companies", href: "/companies", icon: "Building2" }
   ]
 
   const handleSearch = (query) => {
