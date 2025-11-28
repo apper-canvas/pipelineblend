@@ -5,6 +5,7 @@ import Layout from '@/components/organisms/Layout'
 const PipelinePage = lazy(() => import('@/components/pages/Pipeline'))
 const ContactsPage = lazy(() => import('@/components/pages/Contacts'))
 const CompaniesPage = lazy(() => import('@/components/pages/Companies'))
+const TasksPage = lazy(() => import('@/components/pages/Tasks'))
 const NotFoundPage = lazy(() => import('@/components/pages/NotFound'))
 
 const SuspenseWrapper = ({ children }) => (
@@ -40,7 +41,11 @@ const mainRoutes = [
   },
   {
     path: "companies",
-    element: <SuspenseWrapper><CompaniesPage /></SuspenseWrapper>
+element: <SuspenseWrapper><CompaniesPage /></SuspenseWrapper>
+  },
+  {
+    path: "tasks",
+    element: <SuspenseWrapper><TasksPage /></SuspenseWrapper>
   },
   {
     path: "*",
