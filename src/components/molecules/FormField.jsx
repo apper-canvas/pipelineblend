@@ -14,7 +14,8 @@ const FormField = ({
   options = [],
   className = "",
   name,
-  min
+  min,
+  disabled = false
 }) => {
   const id = `field-${Math.random().toString(36).substr(2, 9)}`
 
@@ -23,8 +24,8 @@ const FormField = ({
       <Label htmlFor={id} className={required ? "after:content-['*'] after:text-coral-500 after:ml-1" : ""}>
         {label}
       </Label>
-      {type === "select" ? (
-        <Select id={id} value={value} onChange={onChange} required={required}>
+{type === "select" ? (
+<Select id={id} name={name} value={value} onChange={onChange} required={required} disabled={disabled}>
           <option value="">{placeholder}</option>
           {options.map((option, index) => (
             <option key={index} value={option.value}>
@@ -32,17 +33,18 @@ const FormField = ({
             </option>
           ))}
         </Select>
-      ) : type === "textarea" ? (
+) : type === "textarea" ? (
         <textarea
           id={id}
           value={value}
           onChange={onChange}
           placeholder={placeholder}
           required={required}
+          disabled={disabled}
           rows={3}
           className="flex w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-coral-500/50 focus:border-coral-500 disabled:cursor-not-allowed disabled:opacity-50 transition-colors duration-200 resize-vertical"
         />
-      ) : (
+) : (
 <Input
           id={id}
           type={type}
@@ -51,6 +53,7 @@ const FormField = ({
           onChange={onChange}
           placeholder={placeholder}
           required={required}
+          disabled={disabled}
           min={min}
         />
       )}
