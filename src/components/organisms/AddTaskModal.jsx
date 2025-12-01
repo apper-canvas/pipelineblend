@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
-import { taskService } from '@/services/api/taskService';
-import FormField from '@/components/molecules/FormField';
-import Button from '@/components/atoms/Button';
-import ApperIcon from '@/components/ApperIcon';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from "react";
+import { taskService } from "@/services/api/taskService";
+import { toast } from "react-toastify";
+import { create, update } from "@/services/api/companyService";
+import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import FormField from "@/components/molecules/FormField";
 
 export default function AddTaskModal({ task, isEditing, onClose, onSuccess }) {
   const [formData, setFormData] = useState({

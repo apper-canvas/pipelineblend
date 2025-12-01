@@ -1,4 +1,4 @@
-import tasksData from '@/services/mockData/tasks.json';
+import tasksData from "@/services/mockData/tasks.json";
 
 function delay() {
   return new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 200));
@@ -21,10 +21,10 @@ export const taskService = {
     return { ...task };
   },
 
-  async create(taskData) {
+async create(newTaskData) {
     await delay();
     const newTask = {
-      ...taskData,
+      ...newTaskData,
       Id: Math.max(...taskData.map(t => t.Id), 0) + 1,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()

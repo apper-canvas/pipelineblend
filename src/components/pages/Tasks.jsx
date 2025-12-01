@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
-import { taskService } from '@/services/api/taskService';
-import AddTaskModal from '@/components/organisms/AddTaskModal';
-import TaskDetailModal from '@/components/organisms/TaskDetailModal';
-import SearchBar from '@/components/molecules/SearchBar';
-import Button from '@/components/atoms/Button';
-import Select from '@/components/atoms/Select';
-import Badge from '@/components/atoms/Badge';
-import ApperIcon from '@/components/ApperIcon';
-import Loading from '@/components/ui/Loading';
-import ErrorView from '@/components/ui/ErrorView';
-import Empty from '@/components/ui/Empty';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from "react";
+import { taskService } from "@/services/api/taskService";
+import { toast } from "react-toastify";
+import { getAll } from "@/services/api/companyService";
+import ApperIcon from "@/components/ApperIcon";
+import Loading from "@/components/ui/Loading";
+import ErrorView from "@/components/ui/ErrorView";
+import Empty from "@/components/ui/Empty";
+import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
+import Badge from "@/components/atoms/Badge";
+import AddTaskModal from "@/components/organisms/AddTaskModal";
+import TaskDetailModal from "@/components/organisms/TaskDetailModal";
+import SearchBar from "@/components/molecules/SearchBar";
+
 
 export default function Tasks() {
   const [tasks, setTasks] = useState([]);
