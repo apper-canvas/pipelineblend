@@ -11,7 +11,8 @@ const navigation = [
     { name: "Pipeline", href: "/pipeline", icon: "BarChart3" },
     { name: "Tasks", href: "/tasks", icon: "CheckSquare" },
     { name: "Contacts", href: "/contacts", icon: "Users" },
-    { name: "Companies", href: "/companies", icon: "Building2" }
+    { name: "Companies", href: "/companies", icon: "Building2" },
+    { name: "Quotes", href: "/quotes", icon: "FileText" }
   ]
 
   const handleSearch = (query) => {
